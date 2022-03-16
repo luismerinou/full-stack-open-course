@@ -6,18 +6,22 @@ function Header(props) {
     );
 }
 
+function Part(props) {
+    console.log("hello from Part")
+    return (
+        <h3>
+            {props.part} {props.exercise}
+        </h3>
+    );
+}
+
+
 function Content(props) {
     return (
         <div>
-            <h3>
-                {props.part1} {props.exercises1}
-            </h3>
-            <h3>
-                {props.part2} {props.exercises2}
-            </h3>
-            <h3>
-                {props.part3} {props.exercises3}
-            </h3>
+            <Part part={props.part1} exercise={props.exercises1}/>
+            <Part part={props.part2} exercise={props.exercises2}/>
+            <Part part={props.part3} exercise={props.exercises3}/>
         </div>
     );
 }
@@ -38,7 +42,7 @@ const App = () => {
     const exercises2 = 7
     const part3 = 'State of a component'
     const exercises3 = 14
-    const totalApp= exercises1 + exercises2 + exercises3
+    const totalApp = exercises1 + exercises2 + exercises3
 
     return (
         <div>
@@ -47,8 +51,9 @@ const App = () => {
                 part1={part1} exercises1={exercises1}
                 part2={part2} exercises2={exercises2}
                 part3={part3} exercises3={exercises3}
+
             />
-            <Total total={totalApp} />
+            <Total total={totalApp}/>
         </div>
     );
 }
