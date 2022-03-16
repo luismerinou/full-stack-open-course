@@ -1,33 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
-
-
-const Hello = (props) => { //React components must be capitalized
+function Header(props) {
     return (
-        <div>
-            <h2>Hello {props.name} you are {props.age} from hello component</h2>
-        </div>
-    )
+        <header>
+            <h1>{props.courseName} </h1>
+        </header>
+    );
 }
 
-/* Using a root element is not the only working option.
-   An array of components is also a valid solution:
-
-    return [
-            <h1>Greetings from App component</h1>
-            <Hello name="Jaime" age={age}/>
-            <Hello name={name} age={30 + 15}/>
-    ]
- */
-
-function App() {
-    const name = "Luis"
-    const age = 25
+function Content(props) {
     return (
         <div>
-            <h1>Greetings from App component</h1>
-            <Hello name="Jaime" age={age}/>
-            <Hello name={name} age={30 + 15}/>
+            <h3>
+                {props.part1} {props.exercises1}
+            </h3>
+            <h3>
+                {props.part2} {props.exercises2}
+            </h3>
+            <h3>
+                {props.part3} {props.exercises3}
+            </h3>
+        </div>
+    );
+}
+
+function Total(props) {
+    return (
+        <h3><u>Total number of exercises {props.total} </u></h3>
+    );
+
+}
+
+
+const App = () => {
+    const course = 'Half Stack application development'
+    const part1 = 'Fundamentals of React'
+    const exercises1 = 10
+    const part2 = 'Using props to pass data'
+    const exercises2 = 7
+    const part3 = 'State of a component'
+    const exercises3 = 14
+    const totalApp= exercises1 + exercises2 + exercises3
+
+    return (
+        <div>
+            <Header courseName={course}/>
+            <Content
+                part1={part1} exercises1={exercises1}
+                part2={part2} exercises2={exercises2}
+                part3={part3} exercises3={exercises3}
+            />
+            <Total total={totalApp} />
         </div>
     );
 }
