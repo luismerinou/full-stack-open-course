@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Repository following Full Stack Open Course 2022
+A full stack course with React from the University of Helsinki 
+
+Link to the course: https://fullstackopen.com/en/
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
